@@ -6,6 +6,7 @@ class Pokemon
     public $Hitpoints;
     public $Health;
     public $Attack;
+    public $Attack2;
     public $Weakness;
     public $Resistance;
 
@@ -15,6 +16,11 @@ class Pokemon
         $this->Health = $healthp;
         $this->Hitpoints = $hitp;
         $this->Attack = [];
+        $this->Attack2 = [];
+    }
+
+    function DoAttack($target) {
+        echo $this->Name. ' Will attack' . $target->Name . ' Using ' . $this->Attack ;
     }
 }
 
