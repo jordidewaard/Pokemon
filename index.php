@@ -23,5 +23,6 @@ echo '<pre>' , var_dump($pokemon2) , '</pre>';
 
 $pokemon->DoAttack($pokemon2);
 
+echo var_dump($pokemon);
 
 ?>

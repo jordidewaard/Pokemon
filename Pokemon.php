@@ -18,7 +18,7 @@ class Pokemon
     }
 
     function DoAttack($target) {
-        echo $this->Name. ' Will attack ' . $target->Name . ' Using ' . $this->Attack ;
+        echo $this->Name. ' Will attack ' . $target->Name . ' Using ' . $this->Attack[0]->Name;
     }
 
 
