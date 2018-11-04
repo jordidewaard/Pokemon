@@ -5,7 +5,7 @@ require 'Attack.php';
 require 'Resistance.php';
 require 'Weakness.php';
 
-$pokemon = new Pokemon("Pikachu", 60, 60, "Lightning");
+$pokemon = new Pokemon("Pikachu", 60, 60, "Water");
 $pokemon->Weakness = new Weakness("Fighting", 20);
 $pokemon->Resistance = new Resistance("Fire", 1.5);
 $pokemon->Attack[] = new Attack("Electric Ring", 50);
@@ -24,8 +24,14 @@ echo '<br>';
 echo '<br>';
 $pokemon->DoAttack($pokemon2);
 echo '<br>';
-$pok2nh = $pokemon2->Health - $pokemon->Attack[0]->AttackPoints;
-echo $pokemon2->Name . " Now Has " . $pok2nh . " HP Left";
+if ($pokemon->EnergyType == "Water") {
+    $pok2nh = $pokemon2->Health - ($pokemon->Attack[0]->AttackPoints * 2);
+    echo $pokemon2->Name . " Now Has " . $pok2nh . " HP Left";
+}
+else {
+    $pok2nh = $pokemon2->Health - $pokemon->Attack[0]->AttackPoints;
+    echo $pokemon2->Name . " Now Has " . $pok2nh . " HP Left";
+}
 echo '<br>';
 echo '<br>';
 $pokemon2->DoAttack($pokemon);
