@@ -5,9 +5,9 @@ require 'Attack.php';
 require 'Resistance.php';
 require 'Weakness.php';
 
-$pokemon = new Pokemon("Pikachu", 60, 60, "Water");
-$pokemon->Weakness = new Weakness("Fighting", 20);
-$pokemon->Resistance = new Resistance("Fire", 1.5);
+$pokemon = new Pokemon("Pikachu", 60, 60, "Lightning");
+$pokemon->Weakness = new Weakness("Fire", 1.5);
+$pokemon->Resistance = new Resistance("Fighting", 20);
 $pokemon->Attack[] = new Attack("Electric Ring", 50);
 $pokemon->Attack[] = new Attack("Pika Punch", 20);
 
@@ -22,20 +22,8 @@ echo '<br>';
 echo $pokemon->Name . " HP " . $pokemon->Health . "/" . $pokemon->Hitpoints;
 echo '<br>';
 echo '<br>';
-$pokemon->DoAttack($pokemon2);
+$pokemon->DoAttack($pokemon, $pokemon2, $pokemon2);
 echo '<br>';
-if ($pokemon->EnergyType == "Water") {
-    $pok2nh = $pokemon2->Health - ($pokemon->Attack[0]->AttackPoints * 2);
-    echo $pokemon2->Name . " Now Has " . $pok2nh . " HP Left";
-}
-else {
-    $pok2nh = $pokemon2->Health - $pokemon->Attack[0]->AttackPoints;
-    echo $pokemon2->Name . " Now Has " . $pok2nh . " HP Left";
-}
+$pokemon2->DoAttack2($pokemon2, $pokemon, $pokemon);
 echo '<br>';
-echo '<br>';
-$pokemon2->DoAttack($pokemon);
-echo '<br>';
-$poknh = $pokemon->Health - $pokemon2->Attack[1]->AttackPoints;
-echo $pokemon->Name . " Now Has " . $poknh . " HP Left";
 ?>
