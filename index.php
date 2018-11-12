@@ -21,5 +21,6 @@ echo '<br>';
 echo '<br>';
 $pokemon->DoAttack($pokemon, $pokemon2, $pokemon2);
 echo '<br>';
-$pokemon2->DoAttack2($pokemon2, $pokemon, $pokemon);
+$pokemon2->DoAttack($pokemon2, $pokemon, $pokemon);
 echo '<br>';
+$pokemon->DoAttack($pokemon, $pokemon2, $pokemon2);
